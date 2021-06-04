@@ -25,7 +25,7 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose:' + process.env.DATABASE_URL))
 
 //indica que esse caminho (path) usa esse controller (route)
-app.use('/', indexRouter) 
+//app.use('/', indexRouter) 
 app.use('/authors', authorRouter)
 
 app.listen(process.env.PORT || 3000) //pega a porta da variável environment quando fizer deploy o sevidor vai indicar a porta ou usar a porta fixa 3000 neste caso durante desenvolvimento npn
