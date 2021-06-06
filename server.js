@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'production'){
 const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
+const bodyParse = require('body-parser')
 
 // carrega os Controller (route)
 const indexRouter = require('./routes/index')
@@ -16,6 +17,8 @@ app.set('views', __dirname + '/views') //indica onde estarão as views
 app.set('layout', 'layouts/layout') // hook-up layout files - indica onde estará o layout das views
 app.use(expressLayouts) // indica para aplicação express que queremos usar o expressLayouts
 app.use(express.static('public')) // indica ao express onde os arquivos públicos irão estar: files como css, js, images
+//app.use(bodyParse.urlencoded({ limit: '10mb', extended: false }))
+app.use(express.urlencoded({extended: false}))
 
 // MongoDB connection
 const mongoose = require('mongoose') //importa api Mongoose da library instalada 

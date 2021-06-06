@@ -1,1 +1,11 @@
 <h3>New Author</h3>
+
+<!-- cria um form que liga a ação ao route (controller) e indica o método, no caso post chama Create New Author-->
+<form action="/authors" method="post">
+    <%- include('_formInputFields.ejs') %> 
+    <!--botões-->
+    <!--cancel usa anchor tag porque liga a uma outra página, botões são usados para interagir com forms e outros objetos-->
+    <a href="/authors">Cancel</a>
+    <!-- para submeter o form ai usam um button de fato-->
+    <button type="submit">Create</button>
+</form>
