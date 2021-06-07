@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended: false}))
 
 // MongoDB connection
 const mongoose = require('mongoose') //importa api Mongoose da library instalada 
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true}) //define conexão com o banco
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true }) //define conexão com o banco
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose:' + process.env.DATABASE_URL))
