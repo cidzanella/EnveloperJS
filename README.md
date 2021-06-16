@@ -1,1 +1,1 @@
-"Enveloper JS version" 
+"Mybrary Tutorial Sample" 
